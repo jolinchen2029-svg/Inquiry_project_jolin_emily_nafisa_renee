@@ -2,27 +2,241 @@
     <head>
         <title>The Daily Sprout</title>
         <style>
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                background-color: #e0f2e9; /* light sage green */
+                border-bottom: 1px solid #c9e5d0;
+            }
+            .navbar-links {
+                display: flex;
+                gap: 30px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar-links a {
+                text-decoration: none;
+                color: #2e7d32; /* deep green */
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+            .navbar-links a:hover {
+                color: #a33636; /* softer, earthy red */
+            }
+            .navbar-search {
+                display: flex;
+            }
+            .navbar-search input {
+                padding: 8px 12px;
+                border: 1px solid #c9e5d0;
+                border-radius: 4px;
+                font-size: 14px;
+            }
             .images-row {
                 display: flex;
                 gap: 20px;
                 justify-content: center;
                 margin: 20px;
             }
-            .images-row img {
+            .product-card {
+                text-align: center;
                 max-width: 250px;
+                border: 1px solid #c9e5d0;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #f5fdf7;
+            }
+            .product-card img {
+                max-width: 100%;
                 height: auto;
+                border-radius: 4px;
+            }
+            .product-card h3 {
+                margin: 10px 0 5px;
+                font-size: 18px;
+            }
+            .product-card p {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .product-card .price {
+                font-weight: bold;
+                color: #2e7d32;
+            }
+            .product-card button {
+                margin-top: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+                cursor: pointer;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            .product-card button:hover {
+                background-color: #57a05a;
+            }
+            .about {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                margin: 40px 20px;
+            }
+            .about-img {
+                max-width: 400px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            .about-text {
+                max-width: 600px;
+            }
+            .about-text h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .about-text p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            .site-footer {
+                background-color: #e0f2e9;
+                padding: 30px 20px;
+                text-align: center;
+                margin-top: 40px;
+            }
+            .footer-content h3 {
+                margin-bottom: 10px;
+            }
+            .footer-form {
+                margin: 10px 0;
+            }
+            .footer-form input[type="email"] {
+                padding: 8px;
+                width: 200px;
+                margin-right: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .footer-form button {
+                padding: 8px 12px;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .footer-form button:hover {
+                background-color: #57a05a;
+            }
+            .footer-links {
+                margin: 10px 0;
+                font-size: 14px;
+                color: #4a4a4a;
+            }
+            .footer-links a {
+                text-decoration: none;
+                color: #2e7d32;
+                margin: 0 5px;
+                transition: color 0.3s;
+            }
+            .footer-note {
+                font-size: 12px;
+                color: #777;
+                margin-top: 15px;
+            }
+            .image-container {
+                text-align: center;
+                margin-top: 30px;
+            }
+            .image-container img {
+                display: block;
+                margin: 0 auto;
+            }
+            button {
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #57a05a;
             }
         </style>
     </head>
     <body>
+        <nav class="navbar">
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#learning">Learning</a></li>
+                <li><a href="#help">Help</a></li>
+            </ul>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
         <div class="image-container">
-            <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg" alt="person holding a green plant" width="500">
+            <img src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="green sprout by Francesco Gallarotti" width="500">
             <h1>The Daily Sprout</h1>
         </div>
         <button>Shop Now!</button>
         <div class="images-row">
-            <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg" alt="green plant 1">
-            <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg" alt="green plant 2">
-            <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg" alt="green plant 3">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1566804770468-867f6158bda5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="strawberry pic by Oliver Hale">
+                <h3>Strawberry Seeds</h3>
+                <p class="description">Sweet and juicy strawberries in your own garden.</p>
+                <p class="price">$4.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597474561103-0773c378a1fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZWJlcnJ5fGVufDB8fDB8fHww" alt="blueberry pic by Alex Ushakoff">
+                <h3>Blueberry Seeds</h3>
+                <p class="description">Grow your own antioxidant-rich blueberries.</p>
+                <p class="price">$5.49</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593328125760-2a9bf6288fb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhaXNpZXN8ZW58MHx8MHx8fDA%3D" alt="daisies pic by Andreas Kretschmer">
+                <h3>Daisy Seeds</h3>
+                <p class="description">Brighten your yard with cheerful daisies.</p>
+                <p class="price">$3.99</p>
+                <button>Buy Now</button>
+            </div>
         </div>
+        <section class="about">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="group gardening" class="about-img">
+            <div class="about-text">
+                <h2>What We Do</h2>
+                <p>We are an online group managing a gardening blog that offers educational gardening content. Our goal is to organize blogs, display educational videos and instructions, and build a thriving online gardening community.</p>
+            </div>
+        </section>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <h3>The Daily Sprout</h3>
+                <p>Join our mailing list for updates and gardening tips:</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="footer-links">
+                    <a href="#about">About Us</a> |
+                    <a href="#contact">Contact</a> |
+                    <a href="#privacy">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-note">
+                &copy; 2026 The Daily Sprout. All rights reserved.
+            </div>
+        </footer>
 </html>
