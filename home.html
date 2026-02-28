@@ -16,11 +16,22 @@
         <style>
             .navbar {
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: center;
-                padding: 15px 30px;
+                padding: 15px 10px;
                 background-color: #e0f2e9; /* light sage green */
                 border-bottom: 1px solid #c9e5d0;
+            }
+            .navbar-left {
+                margin-right: 40px;
+            }
+            .navbar-search {
+                margin-left: auto;
+            }
+            .logo-text {
+                font-size: 18px;
+                font-weight: bold;
+                color: #2e7d32;
             }
             .navbar-links {
                 display: flex;
@@ -306,7 +317,7 @@
     <body>
         <nav class="navbar" aria-label="Main navigation">
             <div class="navbar-left">
-                <img src="https://via.placeholder.com/50?text=Logo" alt="The Daily Sprout logo" class="logo" width="50" height="50">
+                <span class="logo-text">The Daily Sprout</span>
                 <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
                     <span></span><span></span><span></span>
                 </div>
@@ -355,19 +366,19 @@
             <h2>Featured Articles</h2>
             <div class="articles-row">
                 <div class="article-card">
-                    <img src="https://via.placeholder.com/250x150" alt="gardening basics" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1494218480824-2c2d36d71b7e?q=80&w=250&auto=format&fit=crop" alt="gardening basics" loading="lazy">
                     <h3>Gardening 101</h3>
                     <p>Basics for beginners and starter tips.</p>
                     <a href="#" class="article-button">Read More</a>
                 </div>
                 <div class="article-card">
-                    <img src="https://via.placeholder.com/250x150" alt="seasonal tips" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=250&auto=format&fit=crop" alt="seasonal tips" loading="lazy">
                     <h3>Seasonal Tips</h3>
                     <p>What to plant each season.</p>
                     <a href="#" class="article-button">Read More</a>
                 </div>
                 <div class="article-card">
-                    <img src="https://via.placeholder.com/250x150" alt="advanced techniques" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1587306438841-32ee759b5a9a?q=80&w=250&auto=format&fit=crop" alt="advanced techniques" loading="lazy">
                     <h3>Advanced Techniques</h3>
                     <p>Take your garden to the next level.</p>
                     <a href="#" class="article-button">Read More</a>
@@ -425,7 +436,7 @@
         </section>
         <section id="privacy" style="margin:40px 20px;">
             <h2>Privacy Policy</h2>
-            <p>Your privacy is important to us. We do not share or sell your information. This is a placeholder section – update with your full policy.</p>
+            <p>Your privacy is important to us. We do not share or sell your information.</p>
         </section>
         <button id="backToTop" aria-label="Back to top">↑</button>
         <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button></div>
@@ -547,7 +558,7 @@
                 renderCalendar('calendarWidget', newDate);
             }
         </script>
-        <!-- analytics placeholder -->
+
         <script>
             // analytics snippet goes here
             // e.g. Google Analytics or similar tracking
