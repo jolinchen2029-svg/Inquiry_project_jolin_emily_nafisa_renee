@@ -1,0 +1,556 @@
+<html>
+    <head>
+        <title>The Daily Sprout</title>
+        <!-- SEO & social metadata -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Gardening tips, seeds, and community content from The Daily Sprout.">
+        <meta name="keywords" content="gardening, seeds, plants, community, blog, tips">
+        <meta property="og:title" content="The Daily Sprout">
+        <meta property="og:description" content="Your online gardening resource with articles, tips, and products.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://example.com/og-image.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="The Daily Sprout">
+        <meta name="twitter:description" content="Your online gardening resource with articles, tips, and products.">
+        <style>
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                background-color: #e0f2e9; /* light sage green */
+                border-bottom: 1px solid #c9e5d0;
+            }
+            .navbar-links {
+                display: flex;
+                gap: 30px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar-links a {
+                text-decoration: none;
+                color: #2e7d32; /* deep green */
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+            .navbar-links a:hover {
+                color: #a33636; /* softer, earthy red */
+            }
+            .navbar-search {
+                display: flex;
+            }
+            .navbar-search input {
+                padding: 8px 12px;
+                border: 1px solid #c9e5d0;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            .images-row {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin: 20px;
+            }
+            .product-card {
+                text-align: center;
+                max-width: 250px;
+                border: 1px solid #c9e5d0;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #f5fdf7;
+            }
+            .product-card img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 4px;
+            }
+            .product-card h3 {
+                margin: 10px 0 5px;
+                font-size: 18px;
+            }
+            .product-card p {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .product-card .price {
+                font-weight: bold;
+                color: #2e7d32;
+            }
+            .product-card button {
+                margin-top: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+                cursor: pointer;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            .product-card button:hover {
+                background-color: #57a05a;
+            }
+            .about {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                margin: 40px 20px;
+            }
+            .about-img {
+                max-width: 400px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            .about-text {
+                max-width: 600px;
+            }
+            .about-text h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .about-text p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            .site-footer {
+                background-color: #e0f2e9;
+                padding: 30px 20px;
+                text-align: center;
+                margin-top: 40px;
+            }
+            .footer-content h3 {
+                margin-bottom: 10px;
+            }
+            .footer-form {
+                margin: 10px 0;
+            }
+            .footer-form input[type="email"] {
+                padding: 8px;
+                width: 200px;
+                margin-right: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .footer-form button {
+                padding: 8px 12px;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .footer-form button:hover {
+                background-color: #57a05a;
+            }
+            .footer-links {
+                margin: 10px 0;
+                font-size: 14px;
+                color: #4a4a4a;
+            }
+            .footer-links a {
+                text-decoration: none;
+                color: #2e7d32;
+                margin: 0 5px;
+                transition: color 0.3s;
+            }
+            .footer-note {
+                font-size: 12px;
+                color: #777;
+                margin-top: 15px;
+            }
+            .image-container {
+                text-align: center;
+                margin-top: 30px;
+            }
+            .image-container img {
+                display: block;
+                margin: 0 auto;
+            }
+            button {
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #2e7d32;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #57a05a;
+            }
+            .article-button {
+                display: inline-block;
+                margin: 10px auto;
+                padding: 8px 16px;
+                font-size: 14px;
+                background-color: #2e7d32;
+                color: white;
+                text-decoration: none;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            .article-button:hover {
+                background-color: #57a05a;
+            }
+            /* featured articles */
+            .featured {
+                margin: 40px 20px;
+                text-align: center;
+            }
+            .articles-row {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .article-card {
+                max-width: 250px;
+                border: 1px solid #c9e5d0;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #f5fdf7;
+                text-align: center;
+            }
+            .article-card img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 4px;
+            }
+            .plant-calendar {
+                margin: 40px 20px;
+                text-align: center;
+            }
+            .calendar-widget {
+                border: 1px dashed #c9e5d0;
+                padding: 20px;
+                background-color: #fff;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .testimonials {
+                margin: 40px 20px;
+                text-align: center;
+                font-style: italic;
+                color: #555;
+            }
+            /* responsive tweaks */
+            @media (max-width: 600px) {
+                .navbar-links {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                .images-row,
+                .articles-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .about {
+                    flex-direction: column;
+                }
+                .hamburger {
+                    display: block;
+                    cursor: pointer;
+                    width: 30px;
+                    height: 22px;
+                    position: relative;
+                }
+                .hamburger span {
+                    background: #2e7d32;
+                    display: block;
+                    height: 4px;
+                    margin: 4px 0;
+                    transition: 0.3s;
+                }
+                .navbar-links.collapsed {
+                    display: none;
+                }
+            }
+            /* sticky header */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            /* back-to-top button */
+            #backToTop {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: none;
+                background-color: #2e7d32;
+                color: #fff;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            /* cookie banner */
+            #cookieBanner {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.8);
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="navbar-left">
+                <img src="https://via.placeholder.com/50?text=Logo" alt="The Daily Sprout logo" class="logo" width="50" height="50">
+                <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#learning">Learning</a></li>
+                <li><a href="#contact">Help</a></li>
+            </ul>
+            <div class="navbar-search">
+                <input type="text" placeholder="Search..." aria-label="Search the site">
+            </div>
+        </nav>
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="green sprout by Francesco Gallarotti" width="500" loading="lazy">
+            <h1>The Daily Sprout</h1>
+        </div>
+        <button>Shop Now!</button>
+        <div class="images-row">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1566804770468-867f6158bda5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="strawberry pic by Oliver Hale" loading="lazy">
+                <h3>Strawberry Seeds</h3>
+                <p class="description">Sweet and juicy strawberries in your own garden.</p>
+                <p class="price">$4.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597474561103-0773c378a1fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZWJlcnJ5fGVufDB8fDB8fHww" alt="blueberry pic by Alex Ushakoff" loading="lazy">
+                <h3>Blueberry Seeds</h3>
+                <p class="description">Grow your own antioxidant-rich blueberries.</p>
+                <p class="price">$5.49</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593328125760-2a9bf6288fb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhaXNpZXN8ZW58MHx8MHx8fDA%3D" alt="daisies pic by Andreas Kretschmer" loading="lazy">
+                <h3>Daisy Seeds</h3>
+                <p class="description">Brighten your yard with cheerful daisies.</p>
+                <p class="price">$3.99</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Featured articles section -->
+        <section id="featured" class="featured">
+            <h2>Featured Articles</h2>
+            <div class="articles-row">
+                <div class="article-card">
+                    <img src="https://via.placeholder.com/250x150" alt="gardening basics" loading="lazy">
+                    <h3>Gardening 101</h3>
+                    <p>Basics for beginners and starter tips.</p>
+                    <a href="#" class="article-button">Read More</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://via.placeholder.com/250x150" alt="seasonal tips" loading="lazy">
+                    <h3>Seasonal Tips</h3>
+                    <p>What to plant each season.</p>
+                    <a href="#" class="article-button">Read More</a>
+                </div>
+                <div class="article-card">
+                    <img src="https://via.placeholder.com/250x150" alt="advanced techniques" loading="lazy">
+                    <h3>Advanced Techniques</h3>
+                    <p>Take your garden to the next level.</p>
+                    <a href="#" class="article-button">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planting calendar with dynamic month view -->
+        <section id="calendar" class="plant-calendar">
+            <h2>Planting Calendar</h2>
+            <p>Check what’s best to plant this month:</p>
+            <div class="calendar-controls" style="margin-bottom:10px;">
+                <button onclick="changeMonth(-1)">&lt; Prev</button>
+                <button onclick="changeMonth(1)">Next &gt;</button>
+            </div>
+            <div class="calendar-widget" id="calendarWidget">
+                <!-- calendar will be generated here -->
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Community Says</h2>
+            <div class="testimonial-wrapper">
+                <p class="testimonial">“I grew my first tomatoes thanks to these tips!” – Sarah</p>
+                <p class="testimonial" style="display:none;">“The planting calendar helped me plan my crops perfectly.” – Miguel</p>
+                <p class="testimonial" style="display:none;">“Love the community forums and recipes!” – Priya</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="group gardening" class="about-img" loading="lazy">
+            <div class="about-text">
+                <h2>What We Do</h2>
+                <p>We are an online group managing a gardening blog that offers educational gardening content. Our goal is to organize blogs, display educational videos and instructions, and build a thriving online gardening community.</p>
+            </div>
+        </section>
+        <!-- Contact / Help section -->
+        <section id="contact" class="contact" style="margin:40px 20px;">
+            <h2>Contact Us</h2>
+            <p>Have questions? Drop us a line.</p>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required aria-label="Your name">
+                <input type="email" placeholder="Your Email" required aria-label="Your email">
+                <textarea placeholder="Your Message" required aria-label="Your message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <details style="margin-top:20px;">
+                <summary>Frequently Asked Questions</summary>
+                <p><strong>Q:</strong> How can I order seeds?<br>
+                <strong>A:</strong> Click the "Shop Now" button or browse products on the homepage.</p>
+                <p><strong>Q:</strong> Do you ship internationally?<br>
+                <strong>A:</strong> Yes, we ship to most countries.</p>
+            </details>
+        </section>
+        <section id="privacy" style="margin:40px 20px;">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. We do not share or sell your information. This is a placeholder section – update with your full policy.</p>
+        </section>
+        <button id="backToTop" aria-label="Back to top">↑</button>
+        <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button></div>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <h3>The Daily Sprout</h3>
+                <p>Join our mailing list for updates and gardening tips:</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="footer-links">
+                    <a href="#about">About Us</a> |
+                    <a href="#contact">Contact</a> |
+                    <a href="#privacy">Privacy Policy</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank">Facebook</a> |
+                    <a href="https://twitter.com" target="_blank">Twitter</a> |
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-note">
+                &copy; <span id="currentYear">2026</span> The Daily Sprout. All rights reserved.
+            </div>
+        </footer>
+        <script>
+            function renderCalendar(elementId, date) {
+                const widget = document.getElementById(elementId);
+                if (!widget) return;
+                const monthNames = [
+                    'January','February','March','April','May','June',
+                    'July','August','September','October','November','December'
+                ];
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                let html = `<table class="calendar-table"><caption>${monthNames[month]} ${year}</caption><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr>`;
+                // fill initial blank cells
+                for (let i = 0; i < firstDay; i++) {
+                    html += '<td></td>';
+                }
+                for (let day = 1; day <= daysInMonth; day++) {
+                    if ((firstDay + day - 1) % 7 === 0 && day !== 1) {
+                        html += '</tr><tr>';
+                    }
+                    html += `<td>${day}</td>`;
+                }
+                html += '</tr></tbody></table>';
+                widget.innerHTML = html;
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                // update footer year
+                const yearSpan = document.getElementById('currentYear');
+                if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+                renderCalendar('calendarWidget', new Date());
+
+                // hamburger toggle
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.navbar-links');
+                if (hamburger && navLinks) {
+                    // start collapsed on small screens
+                    if (window.innerWidth < 600) navLinks.classList.add('collapsed');
+                    window.addEventListener('resize', () => {
+                        if (window.innerWidth < 600) navLinks.classList.add('collapsed');
+                        else navLinks.classList.remove('collapsed');
+                    });
+                    hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('collapsed');
+                    });
+                    hamburger.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            navLinks.classList.toggle('collapsed');
+                        }
+                    });
+                }
+
+                // testimonials rotation
+                const testimonials = document.querySelectorAll('.testimonial-wrapper .testimonial');
+                let tIndex = 0;
+                setInterval(() => {
+                    testimonials[tIndex].style.display = 'none';
+                    tIndex = (tIndex + 1) % testimonials.length;
+                    testimonials[tIndex].style.display = 'block';
+                }, 5000);
+
+                // back-to-top button
+                const backBtn = document.getElementById('backToTop');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) backBtn.style.display = 'block';
+                    else backBtn.style.display = 'none';
+                });
+                backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+                // cookie banner
+                const cookieBanner = document.getElementById('cookieBanner');
+                const acceptBtn = document.getElementById('acceptCookies');
+                if (!localStorage.getItem('cookiesAccepted')) {
+                    cookieBanner.style.display = 'block';
+                }
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookiesAccepted','true');
+                    cookieBanner.style.display = 'none';
+                });
+
+                // contact form simple handler
+                const contactForm = document.getElementById('contactForm');
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message!');
+                    contactForm.reset();
+                });
+            });
+            // simple month navigation for calendar (next/prev)
+            function changeMonth(offset) {
+                const current = new Date(document.querySelector('.calendar-table caption').textContent);
+                const newDate = new Date(current.getFullYear(), current.getMonth() + offset, 1);
+                renderCalendar('calendarWidget', newDate);
+            }
+        </script>
+        <!-- analytics placeholder -->
+        <script>
+            // analytics snippet goes here
+            // e.g. Google Analytics or similar tracking
+        </script>
+    </body>
+</html>
