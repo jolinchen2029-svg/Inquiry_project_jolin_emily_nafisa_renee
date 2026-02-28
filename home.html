@@ -24,6 +24,8 @@
             }
             .navbar-left {
                 margin-right: 40px;
+                display: flex;
+                align-items: center;
             }
             .navbar-search {
                 margin-left: auto;
@@ -32,6 +34,11 @@
                 font-size: 18px;
                 font-weight: bold;
                 color: #2e7d32;
+            }
+            .logo-img {
+                vertical-align: middle;
+                margin-right: 8px;
+                border-radius: 50%;
             }
             .navbar-links {
                 display: flex;
@@ -209,30 +216,23 @@
             .article-button:hover {
                 background-color: #57a05a;
             }
+            /* contact form inputs */
+            #contactForm input,
+            #contactForm textarea {
+                width: 100%;
+                max-width: 400px;
+                padding: 8px 12px;
+                margin: 8px auto;
+                display: block;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            #contactForm textarea {
+                height: 120px;
+                resize: vertical;
+            }
             /* featured articles */
-            .featured {
-                margin: 40px 20px;
-                text-align: center;
-            }
-            .articles-row {
-                display: flex;
-                gap: 20px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .article-card {
-                max-width: 250px;
-                border: 1px solid #c9e5d0;
-                padding: 10px;
-                border-radius: 6px;
-                background-color: #f5fdf7;
-                text-align: center;
-            }
-            .article-card img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 4px;
-            }
+            
             .plant-calendar {
                 margin: 40px 20px;
                 text-align: center;
@@ -317,6 +317,17 @@
     <body>
         <nav class="navbar" aria-label="Main navigation">
             <div class="navbar-left">
+                <span class="logo-img" aria-hidden="true" role="img" aria-label="sprout">
+                    <!-- clear sprout: stem with two separated leaves -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40">
+                        <!-- stem -->
+                        <path d="M32 52 V28" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/>
+                        <!-- left leaf outline shifted left -->
+                        <path d="M30 36 C20 32 16 24 20 20 C24 16 28 20 30 24 Z" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- right leaf outline shifted right -->
+                        <path d="M34 36 C44 32 48 24 44 20 C40 16 36 20 34 24 Z" stroke="#2e7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </span>
                 <span class="logo-text">The Daily Sprout</span>
                 <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
                     <span></span><span></span><span></span>
@@ -361,30 +372,7 @@
             </div>
         </div>
 
-        <!-- Featured articles section -->
-        <section id="featured" class="featured">
-            <h2>Featured Articles</h2>
-            <div class="articles-row">
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1494218480824-2c2d36d71b7e?q=80&w=250&auto=format&fit=crop" alt="gardening basics" loading="lazy">
-                    <h3>Gardening 101</h3>
-                    <p>Basics for beginners and starter tips.</p>
-                    <a href="#" class="article-button">Read More</a>
-                </div>
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=250&auto=format&fit=crop" alt="seasonal tips" loading="lazy">
-                    <h3>Seasonal Tips</h3>
-                    <p>What to plant each season.</p>
-                    <a href="#" class="article-button">Read More</a>
-                </div>
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1587306438841-32ee759b5a9a?q=80&w=250&auto=format&fit=crop" alt="advanced techniques" loading="lazy">
-                    <h3>Advanced Techniques</h3>
-                    <p>Take your garden to the next level.</p>
-                    <a href="#" class="article-button">Read More</a>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Planting calendar with dynamic month view -->
         <section id="calendar" class="plant-calendar">
@@ -493,7 +481,9 @@
                 // update footer year
                 const yearSpan = document.getElementById('currentYear');
                 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-                renderCalendar('calendarWidget', new Date());
+                // initialize calendar state
+                window.calendarDate = new Date();
+                renderCalendar('calendarWidget', window.calendarDate);
 
                 // hamburger toggle
                 const hamburger = document.querySelector('.hamburger');
@@ -552,10 +542,13 @@
                 });
             });
             // simple month navigation for calendar (next/prev)
+            // keep track of the current calendar date instead of parsing the caption text
             function changeMonth(offset) {
-                const current = new Date(document.querySelector('.calendar-table caption').textContent);
-                const newDate = new Date(current.getFullYear(), current.getMonth() + offset, 1);
-                renderCalendar('calendarWidget', newDate);
+                if (!window.calendarDate || !(window.calendarDate instanceof Date)) {
+                    window.calendarDate = new Date();
+                }
+                window.calendarDate.setMonth(window.calendarDate.getMonth() + offset);
+                renderCalendar('calendarWidget', window.calendarDate);
             }
         </script>
 
