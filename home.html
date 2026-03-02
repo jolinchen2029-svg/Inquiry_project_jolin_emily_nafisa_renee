@@ -377,7 +377,7 @@
         <!-- Planting calendar with dynamic month view -->
         <section id="calendar" class="plant-calendar">
             <h2>Planting Calendar</h2>
-            <p>Check what’s best to plant this month:</p>
+            <p>Check what's best to plant this month:</p>
             <div class="calendar-controls" style="margin-bottom:10px;">
                 <button onclick="changeMonth(-1)">&lt; Prev</button>
                 <button onclick="changeMonth(1)">Next &gt;</button>
@@ -403,7 +403,7 @@
                 <h2>What We Do</h2>
                 <p>We are an online group managing a gardening blog that offers educational gardening content. Our goal is to organize blogs, display educational videos and instructions, and build a thriving online gardening community.</p>
             </div>
-        </section>
+        </section>1
         <!-- Contact / Help section -->
         <section id="contact" class="contact" style="margin:40px 20px;">
             <h2>Contact Us</h2>
@@ -427,7 +427,7 @@
             <p>Your privacy is important to us. We do not share or sell your information.</p>
         </section>
         <button id="backToTop" aria-label="Back to top">↑</button>
-        <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button></div>
+        <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button> <button id="rejectCookies">Reject</button></div>
         <footer class="site-footer">
             <div class="footer-content">
                 <h3>The Daily Sprout</h3>
@@ -528,12 +528,21 @@
                 // cookie banner
                 const cookieBanner = document.getElementById('cookieBanner');
                 const acceptBtn = document.getElementById('acceptCookies');
-                if (!localStorage.getItem('cookiesAccepted')) {
+                const rejectBtn = document.getElementById('rejectCookies');
+                // show banner until user accepts or explicitly rejects
+                const consent = localStorage.getItem('cookiesAccepted');
+                if (consent !== 'true' && consent !== 'rejected') {
                     cookieBanner.style.display = 'block';
                 }
                 acceptBtn.addEventListener('click', () => {
                     localStorage.setItem('cookiesAccepted','true');
                     cookieBanner.style.display = 'none';
+                    // you could initialize analytics here
+                });
+                rejectBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookiesAccepted','rejected');
+                    cookieBanner.style.display = 'none';
+                    // analytics or tracking should not run
                 });
 
                 // contact form simple handler
