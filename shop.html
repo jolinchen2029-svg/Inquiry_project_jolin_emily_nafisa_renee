@@ -231,26 +231,8 @@
                 height: 120px;
                 resize: vertical;
             }
-            /* featured articles */
+
             
-            .plant-calendar {
-                margin: 40px 20px;
-                text-align: center;
-            }
-            .calendar-widget {
-                border: 1px dashed #c9e5d0;
-                padding: 20px;
-                background-color: #fff;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            .testimonials {
-                margin: 40px 20px;
-                text-align: center;
-                font-style: italic;
-                color: #555;
-            }
-            /* responsive tweaks */
             @media (max-width: 600px) {
                 .navbar-links {
                     flex-direction: column;
@@ -312,6 +294,24 @@
                 text-align: center;
                 display: none;
             }
+            /* Product grid layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 2rem; /* space between cards */
+  max-width: 1200px;
+  margin: 0 auto; /* center grid */
+  padding: 2rem;
+}
+
+/* Card styling (optional, improves look) */
+.product-card {
+  background: #f4fbf6;
+  border: 2px solid #cfe6d6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
         </style>
     </head>
     <body>
@@ -334,9 +334,9 @@
                 </div>
             </div>
             <ul class="navbar-links">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="Learningpage.html">Learning</a></li>
+                <li><a href="#learning">Learning</a></li>
                 <li><a href="#contact">Help</a></li>
             </ul>
             <div class="navbar-search">
@@ -344,8 +344,7 @@
             </div>
         </nav>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="green sprout by Francesco Gallarotti" width="500" loading="lazy">
-            <h1>The Daily Sprout</h1>
+            <h1> Shop </h1>
         </div>
         <button>Shop Now!</button>
         <div class="images-row">
@@ -371,19 +370,122 @@
                 <button>Buy Now</button>
             </div>
         </div>
+<section class="product-grid" aria-label="Plant Products">
+
+  <article class="product-card">
+    <figure>
+      <img src="https://lavender-life.com/cdn/shop/articles/lavender-73ebcabe-826b9397-dea6-4952-a121-85a745922222_63d6cdcb-8bc8-4fa8-a44a-2e939f692d2d.jpg?v=1765914750" alt="Lavender flowers from Lavender life">
+      <figcaption>Lavender Seeds</figcaption>
+    </figure>
+
+    <p>Grow calming lavender for fragrance and decor.</p>
+    <p class="price">$4.49</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjkxMTJ8MHwxfHNlYXJjaHwzfHxDbG9zZS11cCUyMG9mJTIwc3VuZmxvd2VyJTIwa2VybmVsc3xlbnwwfHx8fDE3NDkwMzQ5MjR8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Bright yellow sunflower by Sunny Slope Farm">
+      <figcaption>Sunflower Seeds</figcaption>
+    </figure>
+
+    <p>Tall, vibrant sunflowers for your garden.</p>
+    <p class="price">$3.99</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Ocimum_basilicum_8zz.jpg" alt="Fresh basil leaves from wikimeida commons">
+      <figcaption>Basil Seeds</figcaption>
+    </figure>
+
+    <p>Fresh herbs for cooking and seasoning.</p>
+    <p class="price">$2.99</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://live.staticflickr.com/169/487174339_bc6916dfbf_b.jpg" alt="Red roses in bloom from flickr">
+      <figcaption>Rose Seeds</figcaption>
+    </figure>
+
+    <p>Beautiful roses for elegant gardens.</p>
+    <p class="price">$5.99</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://images.pexels.com/photos/214165/pexels-photo-214165.jpeg" alt="Green mint leaves from Pexels">
+      <figcaption>Mint Seeds</figcaption>
+    </figure>
+
+    <p>Fast-growing mint for teas and recipes.</p>
+    <p class="price">$2.49</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Solanum_lycopersicum%2C_Tomate_3.JPG" alt="Ripe red tomatoes on vine from wikimeida commons">
+      <figcaption>Tomato Seeds</figcaption>
+    </figure>
+
+    <p>Grow juicy tomatoes at home.</p>
+    <p class="price">$3.49</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://images.pexels.com/photos/11379482/pexels-photo-11379482.jpeg" alt="Aloe vera plant in pot from Pexels">
+      <figcaption>Aloe Vera Seeds</figcaption>
+    </figure>
+
+    <p>Healing plant for skin care.</p>
+    <p class="price">$4.79</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://images.pexels.com/photos/32980698/pexels-photo-32980698/free-photo-of-close-up-of-a-green-spiky-cactus-plant.jpeg" alt=" cactus image from pexels">
+      <figcaption>Cactus Seeds</figcaption>
+    </figure>
+
+    <p>Low-maintenance desert plants.</p>
+    <p class="price">$3.29</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+  <article class="product-card">
+    <figure>
+      <img src="https://www.buderimfloralart.com.au/cdn/shop/articles/1505_BestPink_CGC9568sqII.jpg?v=1718879835&width=1100" alt="Colorful tulips in garden from Buderim Floral Art">
+      <figcaption>Tulip Seeds</figcaption>
+    </figure>
+
+    <p>Colorful spring flowers.</p>
+    <p class="price">$4.99</p>
+
+    <button type="button">Buy Now</button>
+  </article>
+
+</section>
 
 
-
-        <!-- Planting calendar with dynamic month view -->
         <section id="calendar" class="plant-calendar">
-            <h2>Planting Calendar</h2>
-            <p>Check what's best to plant this month:</p>
-            <div class="calendar-controls" style="margin-bottom:10px;">
-                <button onclick="changeMonth(-1)">&lt; Prev</button>
-                <button onclick="changeMonth(1)">Next &gt;</button>
             </div>
             <div class="calendar-widget" id="calendarWidget">
-                <!-- calendar will be generated here -->
             </div>
         </section>
 
@@ -427,7 +529,7 @@
             <p>Your privacy is important to us. We do not share or sell your information.</p>
         </section>
         <button id="backToTop" aria-label="Back to top">↑</button>
-        <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button> <button id="rejectCookies">Reject</button></div>
+        <div id="cookieBanner">This site uses cookies to improve your experience. <button id="acceptCookies">Accept</button></div>
         <footer class="site-footer">
             <div class="footer-content">
                 <h3>The Daily Sprout</h3>
@@ -444,129 +546,5 @@
                 <div class="footer-social">
                     <a href="https://facebook.com" target="_blank">Facebook</a> |
                     <a href="https://twitter.com" target="_blank">Twitter</a> |
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
-                </div>
-                <div class="footer-credits" style="margin-top: 20px; font-size: 12px; color: #666;">
-                    <p><strong>Image Credits:</strong> Photos by <a href="https://unsplash.com/@francescogallarotti" target="_blank">Francesco Gallarotti</a>, <a href="https://unsplash.com/@olieman" target="_blank">Oliver Hale</a>, <a href="https://unsplash.com/@alexushakoff" target="_blank">Alex Ushakoff</a>, <a href="https://unsplash.com/@akretschmer" target="_blank">Andreas Kretschmer</a>, and <a href="https://unsplash.com/@igorson" target="_blank">Igor Son</a> via <a href="https://unsplash.com" target="_blank">Unsplash</a>.</p>
-                </div>
-            </div>
-            <div class="footer-note">
-                &copy; <span id="currentYear">2026</span> The Daily Sprout. All rights reserved.
-            </div>
-        </footer>
-        <script>
-            function renderCalendar(elementId, date) {
-                const widget = document.getElementById(elementId);
-                if (!widget) return;
-                const monthNames = [
-                    'January','February','March','April','May','June',
-                    'July','August','September','October','November','December'
-                ];
-                const year = date.getFullYear();
-                const month = date.getMonth();
-                const firstDay = new Date(year, month, 1).getDay();
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                let html = `<table class="calendar-table"><caption>${monthNames[month]} ${year}</caption><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr>`;
-                // fill initial blank cells
-                for (let i = 0; i < firstDay; i++) {
-                    html += '<td></td>';
-                }
-                for (let day = 1; day <= daysInMonth; day++) {
-                    if ((firstDay + day - 1) % 7 === 0 && day !== 1) {
-                        html += '</tr><tr>';
-                    }
-                    html += `<td>${day}</td>`;
-                }
-                html += '</tr></tbody></table>';
-                widget.innerHTML = html;
-            }
-            document.addEventListener('DOMContentLoaded', function() {
-                // update footer year
-                const yearSpan = document.getElementById('currentYear');
-                if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-                // initialize calendar state
-                window.calendarDate = new Date();
-                renderCalendar('calendarWidget', window.calendarDate);
-
-                // hamburger toggle
-                const hamburger = document.querySelector('.hamburger');
-                const navLinks = document.querySelector('.navbar-links');
-                if (hamburger && navLinks) {
-                    // start collapsed on small screens
-                    if (window.innerWidth < 600) navLinks.classList.add('collapsed');
-                    window.addEventListener('resize', () => {
-                        if (window.innerWidth < 600) navLinks.classList.add('collapsed');
-                        else navLinks.classList.remove('collapsed');
-                    });
-                    hamburger.addEventListener('click', () => {
-                        navLinks.classList.toggle('collapsed');
-                    });
-                    hamburger.addEventListener('keypress', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            navLinks.classList.toggle('collapsed');
-                        }
-                    });
-                }
-
-                // testimonials rotation
-                const testimonials = document.querySelectorAll('.testimonial-wrapper .testimonial');
-                let tIndex = 0;
-                setInterval(() => {
-                    testimonials[tIndex].style.display = 'none';
-                    tIndex = (tIndex + 1) % testimonials.length;
-                    testimonials[tIndex].style.display = 'block';
-                }, 5000);
-
-                // back-to-top button
-                const backBtn = document.getElementById('backToTop');
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) backBtn.style.display = 'block';
-                    else backBtn.style.display = 'none';
-                });
-                backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-
-                // cookie banner
-                const cookieBanner = document.getElementById('cookieBanner');
-                const acceptBtn = document.getElementById('acceptCookies');
-                const rejectBtn = document.getElementById('rejectCookies');
-                // show banner until user accepts or explicitly rejects
-                const consent = localStorage.getItem('cookiesAccepted');
-                if (consent !== 'true' && consent !== 'rejected') {
-                    cookieBanner.style.display = 'block';
-                }
-                acceptBtn.addEventListener('click', () => {
-                    localStorage.setItem('cookiesAccepted','true');
-                    cookieBanner.style.display = 'none';
-                    // you could initialize analytics here
-                });
-                rejectBtn.addEventListener('click', () => {
-                    localStorage.setItem('cookiesAccepted','rejected');
-                    cookieBanner.style.display = 'none';
-                    // analytics or tracking should not run
-                });
-
-                // contact form simple handler
-                const contactForm = document.getElementById('contactForm');
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your message!');
-                    contactForm.reset();
-                });
-            });
-            // simple month navigation for calendar (next/prev)
-            // keep track of the current calendar date instead of parsing the caption text
-            function changeMonth(offset) {
-                if (!window.calendarDate || !(window.calendarDate instanceof Date)) {
-                    window.calendarDate = new Date();
-                }
-                window.calendarDate.setMonth(window.calendarDate.getMonth() + offset);
-                renderCalendar('calendarWidget', window.calendarDate);
-            }
-        </script>
-
-        <script>
-            // analytics snippet goes here
-            // e.g. Google Analytics or similar tracking
-        </script>
-    </body>
-</html>
+                    <a href="https://instagram.com" target= 
+                    ;)
